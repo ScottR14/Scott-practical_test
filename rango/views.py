@@ -3,12 +3,12 @@ from rango.models import Student, Cats
 
 
 def index(request):
-    category_list = Student.objects.order_by('firstName')
+    student = Student.objects.all()
+    cats = Cats.objects.all()
 
-    context_dict = {'student': category_list}
-
-    return render(request, 'rango/index.html', context=context_dict)
+    return render(request, 'rango/index.html', {'student': student, 'cats': cats})
 
 
 def about(request):
-    return render(request, 'rango/about.html')
+    cats = Cats.objects.all()
+    return render(request, 'rango/about.html', {'cats': cats})

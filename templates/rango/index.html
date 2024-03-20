@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+{% load static %}
 
 <html lang="en">
     <head>
@@ -14,16 +14,16 @@
     <div>
     {% if student %}
         <ul>
-    {% for s in student %}
-        <li>{{ student.firstName }} {{ student.lastName }} has {{ student.noOfcats }} cats </li>
+        {% for s in student %}
+        <li>{{ s.firstName }} {{ s.lastName }} has {{ s.cats_set.count }} cats </li>
                 <div>
                     <ul>
-                        {% for cat in student.cats_set.all %}
+                        {% for cat in s.cats_set.all %}
                         <li>{{ cat.name }}</li>
                         {% endfor %}
                     </ul>
                 </div>
-    {% endfor %}
+        {% endfor %}
             </ul>
     {% else %}
         <strong>No Students here here!</strong>
