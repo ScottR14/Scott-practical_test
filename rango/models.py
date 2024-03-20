@@ -1,11 +1,11 @@
 from django.db import models
+from django.template.defaultfilters import slugify
 
 
 class Student(models.Model):
     firstName = models.CharField(max_length=32)
     lastName = models.CharField(max_length=32)
     noOfcats = models.IntegerField(default=0)
-
     def __str__(self):
         return self.firstName + " " + self.lastName
 
