@@ -15,7 +15,7 @@ SECRET_KEY = '@umirhnm429d_!&zm&0!f&sv&r56$dhpuv@%pzs=b0)#j+-kb$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['ScottR14.pythonanywhere.com']
+ALLOWED_HOSTS = ['Scottr14.pythonanywhere.com']
 
 
 # Application definition
