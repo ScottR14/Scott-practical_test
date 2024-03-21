@@ -4,15 +4,21 @@
 
 <html lang="en">
     <head>
-        <img src="{% static 'images/cats_with_fire.jpg' %}"  alt="image of cats at a fire"/>
-      <title>Abut Cats</title>
+         <link rel="stylesheet" type="text/css" href="{% static 'cssSauce/pets.css' %}" />
+        <div id="images">
+            <img src="{% static 'images/cats-with-goggels.jpg' %}"  alt="image of a cat with goggles on"/>
+            <h1>The Students Pets Page</h1>
+            <img src="{% static 'images/cats_with_fire.jpg' %}"  alt="image of cats at a fire"/>
+        </div>
+      <title>About Cats</title>
     </head>
     <body>
-      <h1>All the cats are:</h1>
-      <div>
+      <div id="link">
         Click to go back <a href="/petsApp">home</a> <br />
       </div>
-      <div>
+      <div id="main-block">
+          <h2>All the cats are</h2>
+      <div id="list">
       {% if cats %}
           <ul>
       {% for cat in cats %}
@@ -23,6 +29,7 @@
           <strong>No cats here!</strong>
 
       {% endif %}
+          </div>
           </div>
     </body>
  </html>

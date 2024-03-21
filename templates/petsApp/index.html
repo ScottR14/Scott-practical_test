@@ -3,15 +3,21 @@
 
 <html lang="en">
     <head>
-        <img src="{% static 'images/cat.png' %}"  alt="image of cat"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'cssSauce/pets.css' %}" />
+        <div id="images">
+                <img src="{% static 'images/cat.png' %}" alt="image of cat"/>
+            <h1>The Students Pets Page</h1>
+                <img src="{% static 'images/CatStaring.jpg' %}" alt="image of a cat staring at the camera"/>
+        </div>
       <title>Students Cats</title>
     </head>
     <body>
-      <h1>The Students and their cats:</h1>
-      <div>
-        <a href="/petsApp/pets/">About pets of students</a> <br />
-      </div>
-    <div>
+    <div id="link">
+    <a href="/petsApp/pets/">About pets of students</a> <br />
+        </div>
+      <div id="main-block">
+        <h2>The Students and their cats</h2>
+    <div id="list">
     {% if student %}
         <ul>
         {% for s in student %}
@@ -34,5 +40,6 @@
 
     {% endif %}
     </div>
+          </div>
     </body>
  </html>
