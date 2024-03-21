@@ -13,9 +13,9 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = '@umirhnm429d_!&zm&0!f&sv&r56$dhpuv@%pzs=b0)#j+-kb$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['Scottr14.pythonanywhere.com']
+ALLOWED_HOSTS = ['scottr14.pythonanywhere.com']
 
 
 # Application definition
