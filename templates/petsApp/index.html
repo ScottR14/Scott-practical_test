@@ -22,13 +22,13 @@
         <ul>
         {% for s in student %}
             {% if s.cats_set.count == 1 %}
-                <li>{{ s.firstName }} {{ s.lastName }} has {{ s.cats_set.count }} cat </li>
+            <li>{{ s.firstName }} {{ s.lastName }} has <strong weight="bold">{{ s.cats_set.count }}</strong> cat </li>
             {% else %}
-        <li>{{ s.firstName }} {{ s.lastName }} has {{ s.cats_set.count }} cats </li>
+            <li>{{ s.firstName }} {{ s.lastName }} has <strong weight="bold">{{ s.cats_set.count }}</strong> cats </li>
             {% endif %}
                 <div>
                     <ul>
-                        {% for cat in s.cats_set.all %}
+                        {% for cat in s.cats_set.all|dictsort:"name" %}
                         <li>{{ cat.name }}</li>
                         {% endfor %}
                     </ul>
