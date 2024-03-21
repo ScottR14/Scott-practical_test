@@ -3,7 +3,11 @@ from rango.models import Student, Cats
 
 
 class StudentAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug': ('firstname', 'lastname')}
+    prepopulated_fields = {('firstname', 'lastname')}
+
+
+class CatsAdmin(admin.ModelAdmin):
+    list_display = ('name', 'owner')
 
 
 admin.site.register(Student)

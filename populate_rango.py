@@ -10,26 +10,22 @@ from rango.models import Student, Cats
 
 
 def populate():
-    students_data = [
-        {'firstName': 'John', 'lastName': 'Doe'},
-        {'firstName': 'Azar', 'lastName': 'Khan'},
-        {'firstName': 'Alysa', 'lastName': 'Croft'},
+
+    student1 = Student.objects.create(firstName='John', lastName='Doe')
+    student2 = Student.objects.create(firstName='Azar', lastName='Khan')
+    student3 = Student.objects.create(firstName='Alysa', lastName='Croft')
+
+    cats_data = [
+            {'student': student3, 'name': 'Alex'},
+            {'student': student3, 'name': 'Luna'},
+            {'student': student3, 'name': 'Mittens'},
+            {'student': student1, 'name': 'Muffins'},
+            {'student': student2, 'name': 'Jill'},
+            {'student': student2, 'name': 'Joe'}
     ]
 
-    for student_data in students_data:
-        student = Student.objects.get_or_create(
-            firstName=student_data['firstName'],
-            lastName=student_data['lastName']
-        )[0]
-
-        cats_data = [
-            {'name': 'Fluffy'},
-            {'name': 'Whiskers'},
-            {'name': 'Mittens'},
-        ]
-
-        for cat_data in cats_data:
-            Cats.objects.get_or_create(owner=student, name=cat_data['name'])
+    for cat_data in cats_data:
+        Cats.objects.create(owner=cat_data['student'], name=cat_data['name'])
 
 
 if __name__ == '__main__':
